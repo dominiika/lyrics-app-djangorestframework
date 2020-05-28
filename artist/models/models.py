@@ -17,7 +17,7 @@ class Artist(models.Model):
             setattr(self, "name", val.title())
         self.spotify_image = get_spotify_image(self)
         if not self.image:
-            self.image = 'https://i.imgur.com/BSattXJ.jpg'
+            self.image = 'https://i.ibb.co/qFHpFMX/default.jpg'
 
         super(Artist, self).save(*args, **kwargs)
 
