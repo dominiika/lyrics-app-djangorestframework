@@ -129,7 +129,7 @@ dmypy.json
 .pyre/
 
 .idea
-/media/upload
+/media/*
 /static
 /lyricsapp/settings/secret_key.py
 /lyricsapp/settings/local.py

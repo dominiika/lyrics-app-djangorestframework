@@ -61,7 +61,7 @@ class Song(models.Model):
 
     def image(self):
         try:
-            return BASE_URL + self.artist.image.url
+            return self.artist.image
         except:
             return None
 
