@@ -1,0 +1,16 @@
+DEBUG = False
+
+ALLOWED_HOSTS = ['lyrics-app-api.herokuapp.com']
+
+CORS_ORIGIN_ALLOW_ALL = False
+
+# SECRET_KEY = ""
+# SPOTIFY_CLIENT_ID = ""
+# SPOTIFY_CLIENT_SECRET = ""
+# YOUTUBE_API_KEY = ""
+
+# DB
+
+CORS_ORIGIN_WHITELIST = [
+
+]
