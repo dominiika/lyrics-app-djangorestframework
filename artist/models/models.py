@@ -1,14 +1,13 @@
 from django.db import models
 from django.contrib.auth import get_user_model
 from genre.models import Genre
-from .functions import artist_image_file_path, get_spotify_image
+from .functions import get_spotify_image
 
 
 class Artist(models.Model):
     user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
     name = models.CharField(max_length=60)
-    image = models.ImageField(null=True, blank=True, upload_to=artist_image_file_path)
-    default_image = "images/default.jpeg"
+    image = models.CharField(max_length=255, null=True, blank=True)
     genres = models.ManyToManyField(Genre)
     spotify_image = models.TextField(blank=True, null=True)
 
@@ -18,7 +17,7 @@ class Artist(models.Model):
             setattr(self, "name", val.title())
         self.spotify_image = get_spotify_image(self)
         if not self.image:
-            self.image = self.default_image
+            self.image = 'https://i.imgur.com/BSattXJ.jpg'
 
         super(Artist, self).save(*args, **kwargs)
 

@@ -1,6 +1,4 @@
 from django.test import TestCase
-from .. import models
-from unittest.mock import patch
 from main.tests.functions import sample_user, sample_artist, sample_song, mocked_song
 from unittest import mock
 
@@ -21,18 +19,6 @@ class ArtistTest(TestCase):
     def test_name_capital_letter(self):
 
         self.assertEqual(self.artist.name, self.artist.name.title())
-
-    @patch("uuid.uuid4")
-    def test_artist_image_path(self, mock_uuid):
-        uuid = "uuid_test"
-        mock_uuid.return_value = uuid
-
-        filename = "img.jpg"
-        genereted_path = models.functions.artist_image_file_path(None, filename)
-
-        expected_path = f"upload/artist/{uuid}.jpg"
-
-        self.assertEqual(expected_path, genereted_path)
 
     @mock.patch(
         "song.models.functions.SongSpotifyAPI.get_song", return_value=mocked_song
@@ -57,6 +43,3 @@ class ArtistTest(TestCase):
 
         self.assertNotEqual(self.artist.no_of_songs(), 2)
 
-    def test_default_image_file_path(self):
-        expected_path = "/media/upload/artist/default.jpeg"
-        self.assertEqual(self.artist.image.url, expected_path)
