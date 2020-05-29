@@ -1,4 +1,5 @@
 import os
+from corsheaders.defaults import default_headers
 # from .base import BASE_DIR
 
 DATABASES = {
@@ -26,9 +27,13 @@ YOUTUBE_API_KEY = os.environ.get('YOUTUBE_API_KEY')
 # CORS_ORIGIN_ALLOW_ALL = True
 
 CORS_ORIGIN_WHITELIST = [
+    'https://lyrics-app-api.herokuapp.com',
     'http://localhost:3000',
-    'https://lyrics-app-api.herokuapp.com'
 ]
+
+CORS_ALLOW_HEADERS = default_headers + (
+    'Access-Control-Allow-Origin',
+)
 
 CORS_REPLACE_HTTPS_REFERER = True
 HOST_SCHEME = "https://"
