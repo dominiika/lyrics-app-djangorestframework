@@ -28,6 +28,7 @@ YOUTUBE_API_KEY = os.environ.get('YOUTUBE_API_KEY')
 
 CORS_ORIGIN_WHITELIST = [
     'https://lyrics-app-bf3d0.web.app',
+    'https://lyrics-app-bf3d0.firebaseapp.com',
     'http://localhost:3000',
 ]
 
