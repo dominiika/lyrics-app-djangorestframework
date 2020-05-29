@@ -27,7 +27,7 @@ YOUTUBE_API_KEY = os.environ.get('YOUTUBE_API_KEY')
 # CORS_ORIGIN_ALLOW_ALL = True
 
 CORS_ORIGIN_WHITELIST = [
-    'https://lyrics-app-api.herokuapp.com',
+    'https://lyrics-app-bf3d0.web.app',
     'http://localhost:3000',
 ]
 
