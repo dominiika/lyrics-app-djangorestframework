@@ -1,25 +1,11 @@
-import requests
-from bs4 import BeautifulSoup
-import re
+import lyricsgenius
 
 
-def get_lyrics(artist, song):
-    artist = re.sub("[^A-Za-z0-9]+", "", artist.lower())
-    if artist.startswith("the"):
-        artist = artist.replace("the", "", 1)
-    song = re.sub("[^A-Za-z0-9]+", "", song.lower())
-    r = requests.get(f"https://www.azlyrics.com/lyrics/{artist}/{song}.html")
-    c = r.content
-    soup = BeautifulSoup(c, "html.parser")
+def get_lyrics(artist, title, access_token):
     try:
-        lyrics = (
-            soup.find("div", {"class": "col-xs-12 col-lg-8 text-center"})
-            .find("div", {"class": ""})
-            .text
-        )
-        if lyrics.startswith("\n\r\n"):
-            lyrics = lyrics.replace("\n\r\n", "", 1)
-        return lyrics
+        genius = lyricsgenius.Genius(access_token)
+        song = genius.search_song(title, artist)
+        return song.lyrics
     except AttributeError:
         return None
 

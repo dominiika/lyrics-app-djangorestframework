@@ -15,6 +15,7 @@ from .functions import (
     highest_rated_filter,
 )
 from rest_framework.pagination import LimitOffsetPagination
+from django.conf import settings
 
 
 class SongViewSet(viewsets.ModelViewSet):
@@ -94,7 +95,7 @@ class SongViewSet(viewsets.ModelViewSet):
     def fetch(self, request):
         artist = request.data["artist"]
         title = request.data["title"]
-        lyrics = get_lyrics(artist, title)
+        lyrics = get_lyrics(artist, title, settings.GENIUS_ACCESS_TOKEN)
         response = {"lyrics": lyrics}
         return Response(response, status=status.HTTP_200_OK)
 

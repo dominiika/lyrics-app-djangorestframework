@@ -29,3 +29,4 @@ DATABASES = {
 # SPOTIFY_CLIENT_ID = 'your Spotify client ID'
 # SPOTIFY_CLIENT_SECRET = 'your Spotify client secret'
 # YOUTUBE_API_KEY = 'your YT client key'
+# GENIUS_ACCESS_TOKEN = 'your Genius access token
