@@ -1,4 +1,5 @@
 import os
+from corsheaders.defaults import default_headers
 # from .base import BASE_DIR
 
 DATABASES = {
@@ -22,12 +23,19 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 SPOTIFY_CLIENT_ID = os.environ.get('SPOTIFY_CLIENT_ID')
 SPOTIFY_CLIENT_SECRET = os.environ.get('SPOTIFY_CLIENT_SECRET')
 YOUTUBE_API_KEY = os.environ.get('YOUTUBE_API_KEY')
+GENIUS_ACCESS_TOKEN = os.environ.get('GENIUS_ACCESS_TOKEN')
 
-CORS_ORIGIN_ALLOW_ALL = True
+# CORS_ORIGIN_ALLOW_ALL = True
 
-# CORS_ORIGIN_WHITELIST = [
-#
-# ]
+CORS_ORIGIN_WHITELIST = [
+    'https://lyrics-app-bf3d0.web.app',
+    'https://lyrics-app-bf3d0.firebaseapp.com',
+    'http://localhost:3000',
+]
+
+CORS_ALLOW_HEADERS = default_headers + (
+    'Access-Control-Allow-Origin',
+)
 
 CORS_REPLACE_HTTPS_REFERER = True
 HOST_SCHEME = "https://"
