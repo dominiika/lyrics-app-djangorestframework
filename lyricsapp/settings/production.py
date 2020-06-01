@@ -30,7 +30,7 @@ GENIUS_ACCESS_TOKEN = os.environ.get('GENIUS_ACCESS_TOKEN')
 CORS_ORIGIN_WHITELIST = [
     'https://lyrics-app-bf3d0.web.app',
     'https://lyrics-app-bf3d0.firebaseapp.com',
-    # 'http://localhost:3000',
+    'http://localhost:3000',
 ]
 
 CORS_ALLOW_HEADERS = default_headers + (
