@@ -133,4 +133,3 @@ dmypy.json
 /static
 /lyricsapp/settings/secret_key.py
 /lyricsapp/settings/local.py
-#/lyricsapp/settings/development.py
