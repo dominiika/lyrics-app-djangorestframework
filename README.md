@@ -10,6 +10,8 @@ https://lyrics-app-api.herokuapp.com/api/
 Here you can see the code of the frontend (React) part:<br/>
 https://github.com/dominiika/lyrics-app-react
 
+### Built with
+
 **Python** version 3.8.0<br/>
 **Django** version: 3.0.2<br/>
 **Django Rest Framework** version: 3.11.0<br/>
@@ -134,3 +136,11 @@ See the views for the reference.
 <br/>
 
 You can clone the frontend part as well (the link is provided at the beginning of this file), so that you can have a full overview of the application.
+
+
+### Running tests
+
+To run the tests, use the following command:
+```
+python manage.py test
+```
